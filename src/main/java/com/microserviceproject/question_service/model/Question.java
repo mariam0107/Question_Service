@@ -1,4 +1,4 @@
-package com.mymicroservice.quizapp.model;
+package com.microserviceproject.question_service.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

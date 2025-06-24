@@ -1,6 +1,7 @@
-package com.mymicroservice.quizapp.dao;
+package com.microserviceproject.question_service.dao;
 
-import com.mymicroservice.quizapp.model.Question;
+
+import com.microserviceproject.question_service.model.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,6 @@ public interface QuestionDao extends JpaRepository<Question,Integer> {
 
     List<Question> findByCategory(String category);
 
-    @Query(value = "SELECT * FROM question q Where q.category=:category ORDER BY RANDOM() LIMIT :numQ",nativeQuery = true)
-    List<Question> findRandomQuestionsByCategory(String category, int numQ);
+    @Query(value = "SELECT q.id FROM question q Where q.category=:category ORDER BY RANDOM() LIMIT :numQ",nativeQuery = true)
+    List<Integer> findRandomQuestionsByCategory(String category, int numQ);
 }

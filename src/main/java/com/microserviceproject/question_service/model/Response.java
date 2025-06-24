@@ -1,4 +1,4 @@
-package com.mymicroservice.quizapp.model;
+package com.microserviceproject.question_service.model;
 
 public class Response {
    private Integer id;
